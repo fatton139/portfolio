@@ -1,2 +1,120 @@
 /* Css Document */
 
+body {
+	background-color:#000000;
+	font-size:36px;
+	font-family:'PT Sans Narrow', Arial, sans-serif;
+}
+
+h1 {
+	font-size:4em;	
+}
+h2 {
+	font-size:3em;		
+}
+h3 {
+	font-size:2em;	
+}
+h4 {
+	font-size:1.5em;	
+}
+h5 {
+	font-size:1em;	
+}
+h6, .navtxt h6 {
+	font-size:0.5em;	
+}
+
+#wrapper {
+	height:100%;	
+}
+
+header {
+	width:100%;
+	height:100vh;
+}
+
+#navigation {
+	height:50vh;
+	width:10%;
+	z-index:100;
+	position:fixed;
+	margin-left:5vmin;
+}
+
+ul {
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}	
+
+nav li {
+	margin-top:3vmin;
+	margin-bottom:3vmin;
+	position:relative;
+}
+
+ul li a i, .navtxt {
+	font-weight:800;
+	color:rgba(169,169,169,1.00);
+}
+
+ul li a i:hover {
+	color:#ea8a23;
+}
+
+.navtxt,
+.navtxt::before,
+ul li:hover > a > .navtxt {
+	position:absolute;	
+	left:3.6em;
+	opacity:0;
+	z-index:1;	
+	color:rgba(169,169,169,0);
+	width:50%;
+	text-align:left;
+}
+
+.navtxt::before {
+	height:2vmin;
+	width:100%;
+	left:-0.25em;
+	content:"";
+	border-left:solid #a9a9a9 0.2vmin;	
+}
+
+ul li:hover > a > .navtxt,
+ul li:hover > a > .navtxt::before {
+	color:rgba(169,169,169,1.00);
+	opacity:1;
+}
+
+ul li:hover > a > .navtxt::before {
+	transform:translateY(50%);
+}
+
+/*Utilities Classes*/
+
+.ycenter,
+.navtxt {
+	top:50%;
+	transform: translateY(-50%);	
+}
+
+.imgcov {
+	background-size:cover;
+	background-repeat:no-repeat
+}
+
+.stdtrans,
+ul li a i,
+ul li a i:hover,
+.navtxt,
+ul li:hover > a > .navtxt,
+ul li:hover > a > .navtxt::before,
+.navtxt::before {
+	-webkit-transition: all 0.35s;
+	-moz-transition: all 0.35s;
+	transition: all 0.35s;	
+}
