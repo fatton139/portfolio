@@ -223,6 +223,56 @@ ul li:hover > a > .navtxt::before {
 	}
 }
 
+/*Loading*/
+
+.loading {
+	z-index:101;
+	position:fixed;
+	width:100vw;
+	height:100vh;
+	background-color:rgba(0,0,0,1.00);
+	opacity:1;
+	visibility:visible;
+	display:flex;
+	align-items:center;
+	position:fixed;
+}
+
+.no-js .loading,
+.loaded {
+	background-color:#a9a9a9;
+	visibility:hidden;
+	opacity:0;
+}
+
+.loadanimate,
+.loadcircle {
+	width:1em;
+	height:1em;
+	background-color:#ea8a23;
+	border-radius:1em;
+	position:absolute;
+	left:50%;
+	transform:translateX(-50%);
+}
+
+.loadcircle {
+	background-color:#000;
+	border-radius:1em;
+	animation:loading 2s infinite ease-in-out;
+}
+
+@keyframes loading {
+	0%, 100% {
+		width:0.2em;
+		height:0.2em;	
+	}
+	50% {
+		width:0.9em;
+		height:0.9em;
+	}
+}
+
 /*Utilities Classes*/
 
 .ycenter,
@@ -254,7 +304,9 @@ ul li:hover > a > .navtxt::before,
 .navtoggle,
 .navtogglemove,
 #navigation,
-.mobilenav {
+.mobilenav,
+.loaded,
+.loading {
 	-webkit-transition: all 0.35s;
 	-moz-transition: all 0.35s;
 	transition: all 0.35s;	
