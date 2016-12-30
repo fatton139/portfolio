@@ -3,10 +3,15 @@ $(function() {
     "use strict";	
 	$(document).ready(function() { 
 	
+		$(".navtoggle").click(function(){
+			$(this).toggleClass("navtogglemove");
+			$("#navigation").toggleClass("mobilenav");
+		});
+	
 		$("header").interactive_bg({
-			strength: 10,              
+			strength: 3,              
 			scale: 1.01,               
-			animationSpeed: "100ms"
+			animationSpeed: "250ms"
 		});
 		
 		$(window).resize(function() {
@@ -15,6 +20,8 @@ $(function() {
 				height: $(window).outerHeight()
 			});
 		});
+
+
 
 	}); //end of document ready
 }); //end of use
