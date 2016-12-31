@@ -21,7 +21,9 @@ h4 {
 h5 {
 	font-size:1em;	
 }
-h6, .navtxt h6 {
+h6, 
+.navtxt h6,
+p {
 	font-size:0.5em;	
 }
 
@@ -112,7 +114,8 @@ ul li:hover > a > .navtxt::before {
 	left:65%;
 }
 
-.headercontent {
+.headercontent,
+.main h6 {
 	font-family:'Poiret One', Arial, sans-serif;	
 }
 
@@ -200,20 +203,30 @@ ul li:hover > a > .navtxt::before {
 	visibility:hidden;	
 }
 
+.buttonarrow {
+	margin-right:1.95em; 
+	font-size:0.8em;
+}
+
 @media (max-width: 1200px) {
 	.headercontent h3 {
-	width:57%;
-	border-left:1px hidden #333;
-	border-top: 1px solid #333;
-	padding-left:0.3em;
+		width:57%;
+		border-left:1px hidden #333;
+		border-top: 1px solid #333;
+		padding-left:0.3em;
 	}	
+	
+	.buttonarrow {
+		margin-right:10.5em; 
+	}
 }
 
 @media (max-width: 768px) {
 	#navigation,
 	nav i {
 		visibility:hidden;
-		opacity:0;	
+		opacity:0;
+		pointer-events:none;	
 	}
 	
 	nav li {
@@ -263,6 +276,7 @@ ul li:hover > a > .navtxt::before {
 		visibility:visible !important;
 		background-color:rgba(0,0,0,1.00);
 		opacity:1 !important;
+		pointer-events:all !important;
 	}
 	
 	.headercontent {
@@ -307,6 +321,10 @@ ul li:hover > a > .navtxt::before {
 		padding-left:0;	
 	}
 	
+	.buttonarrow {
+		visibility:hidden;
+	}
+	
 }
 
 @media (max-width: 568px) {
@@ -325,11 +343,92 @@ ul li:hover > a > .navtxt::before {
 
 /*About*/
 
-.main {
-	background-image:url(../img/about.jpg);
+.main, 
+.mainsec {
 	background-size:cover;
+	position:relative;
 }
 
+.mainsec, 
+.stripsec  {
+	width:900px;
+	height:900px;
+	position:absolute;
+	left:50%;
+	top:1em;
+	background-image:url(../img/600px-stroke-texture.png);
+	padding:4.5em;
+	padding-right:3em;
+	padding-top:8em;
+}
+
+.main p,
+.main h6 {
+	color:#dadad2;
+	font-weight:300;	
+}
+
+.main h6 {
+	letter-spacing:5px;
+	font-weight:800;
+}
+
+.main .space {
+	letter-spacing:0.1em;	
+}
+
+.ext-about i,
+.stripsec h6 {
+	color:#dadad2;	
+}
+
+.ext li:last-child {
+	border-left:1px #dadad2 solid;	
+}
+
+.ul-about p {
+	letter-spacing:0.2em;
+	text-align:right;	
+}
+
+.ul-about li {
+	border-right:1px #dadad2 solid;
+	padding-right:0.5em;	
+}
+ 
+.stripsec {
+	width:400px;
+	height:1200px;
+	background-image:url(../img/stroke-strip.png);
+	padding:5em 1em 4em 1em;
+	top:-3em;
+	left:25%;
+}
+
+.stripsec hr {
+	width:60%;
+	margin-top:1em;
+	margin-bottom:1em;	
+}
+
+@media (max-width: 768px) {
+	.stripsec,
+	.mainsec {
+		width:100vw;
+		margin:auto;	
+		left:0;
+		padding:8em 0 0 0;
+		top:5em;
+	}
+	
+	.stripsec {	
+		top:20em;
+	}
+	
+	.main {
+		overflow:auto !important;	
+	}
+}
 /*Loading*/
 
 .loading {
@@ -397,8 +496,12 @@ ul li:hover > a > .navtxt::before {
 	margin:0;	
 }
 
+.nopad {
+	padding:0 !important;	
+}
+
 .bold {
-	font-weight:800;	
+	font-weight:800 !important;	
 }
 
 .stdtrans,
