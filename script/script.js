@@ -1,27 +1,38 @@
 // JavaScript Document
+	
 $(function() {
     "use strict";					
-	$(document).ready(function() { 	
+	$(document).ready(function() {
+		setTimeout(function(){
+			$(".loadanimate,.loadcircle").css("opacity","1");
+		}, 1000);
 		$(window).bind("load", function() { 
-			$("body, nav li").css("display", "none");	
+			$("body").css("display", "none");	
 			$(".loading").addClass("loaded");	
 	
 			if ( $(".loading").hasClass("loaded") ) {
-				alert('DOM ready');	
+				//alert('DOM ready');	
 				$("body").fadeIn(2000);
-				$("nav li").each(function(index) {
-					$(this).delay(300*index).fadeIn(600);
-				});
-				$("a.link").click(function(event){
-					event.preventDefault();
-					var linkLocation = $(this).attr("href");
-					$("body").fadeOut(1000, redirectPage);   
-					function redirectPage() {
-						window.location = linkLocation;
-					}
-				});
+				window.sr = ScrollReveal();
+					sr.reveal('nav li', {
+						duration: 1000,
+						scale: 0.0,
+						opacity:0,
+						easing: 'ease-in-out',
+						useDelay: 'onload',
+						mobile: false
+					}, 300);
 			}
-		});			
+		});		
+		
+		$("nav a, a.headera").click(function(event){
+			event.preventDefault();
+			var linkLocation = $(this).attr("href");
+			$("body").fadeOut(1000, redirectPage);   
+			function redirectPage() {
+				window.location = linkLocation;
+			}
+		});	
 			
 		$(".navtoggle").click(function(){
 			$(this).toggleClass("navtogglemove");
@@ -40,5 +51,30 @@ $(function() {
 				height: $(window).outerHeight()
 			});
 		});
+		
 	}); //end of document ready
 }); //end of use
+
+function toggleFullScreen(elem) {
+    "use strict"; if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+        if (elem.requestFullScreen) {
+            elem.requestFullScreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullScreen) {
+            elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        }
+    } else {
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
+}
