@@ -39,14 +39,14 @@ $(function() {
 			$("#navigation").toggleClass("mobilenav");
 		});
 	
-		$("header, .main").interactive_bg({
+		$(".main").interactive_bg({
 			strength: 3,              
 			scale: 1.01,               
 			animationSpeed: "250ms"
 		});
 
 		$(window).resize(function() {
-			$("header > .ibg-bg, .main > .ibg-bg").css({
+			$(".main > .ibg-bg").css({
 				width: $(window).outerWidth(),
 				height: $(window).outerHeight()
 			});
