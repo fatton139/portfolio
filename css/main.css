@@ -349,6 +349,7 @@ ul li:hover > a > .navtxt::before {
 .mainsec {
 	background-size:cover;
 	position:relative;
+	color:#dadad2;
 }
 
 .mainsec, 
@@ -502,6 +503,45 @@ ul li:hover > a > .navtxt::before {
 	}
 }
 
+/*Project List*/
+
+.list .row {
+	padding-top:2em;
+	margin-left:-40px;
+}
+
+.list ul {
+	margin-top:50%;	
+}
+
+.list li {
+	text-align:left;
+}
+
+.list .orange {
+	letter-spacing:0.1em;	
+}
+
+@media (max-width: 1200px) {
+	.list ul {
+		margin-top:0%;
+	}
+	
+	.list li {
+		float:left;
+	}
+	.list ul p::after {
+		content:"\00a0\00a0|\00a0\00a0"	
+	}
+}
+
+@media (max-width: 768px) {
+	.list .row {
+		margin-left:-15px;
+	}
+
+}
+
 /*Loading*/
 
 .loading {
@@ -561,6 +601,7 @@ ul li:hover > a > .navtxt::before {
 }
 
 .imgcov {
+	width:100%;
 	background-size:cover;
 	background-repeat:no-repeat
 }
@@ -576,6 +617,10 @@ ul li:hover > a > .navtxt::before {
 .bold {
 	font-weight:800 !important;	
 }
+
+.orange {
+	color:#ea8a23 !important;
+}	
 
 .stdtrans,
 ul li a i,
