@@ -64,12 +64,12 @@ nav li {
 	position:relative;
 }
 
-ul li a i, .navtxt {
+ul i, .navtxt {
 	font-weight:800;
 	color:rgba(169,169,169,1.00);
 }
 
-ul li a i:hover,
+ul i:hover,
 .back i,
 .headera:hover {
 	color:#ea8a23;
@@ -77,7 +77,7 @@ ul li a i:hover,
 
 .navtxt,
 .navtxt::before,
-ul li:hover > a > .navtxt {
+ul li:hover .navtxt {
 	position:absolute;	
 	left:3.6em;
 	opacity:0;
@@ -95,13 +95,13 @@ ul li:hover > a > .navtxt {
 	border-left:solid #a9a9a9 0.01em;	
 }
 
-ul li:hover > a > .navtxt,
-ul li:hover > a > .navtxt::before {
+ul li:hover .navtxt,
+ul li:hover .navtxt::before {
 	color:rgba(169,169,169,1.00);
 	opacity:1;
 }
 
-ul li:hover > a > .navtxt::before {
+ul li:hover .navtxt::before {
 	transform:translateY(50%);
 }
 
@@ -539,7 +539,28 @@ ul li:hover > a > .navtxt::before {
 	.list .row {
 		margin-left:-15px;
 	}
+}
 
+/*Contact Me*/
+button, 
+.modal-header, 
+.modal-footer, 
+.modal-content p,
+.modal-content button,
+.modal-content button:hover {
+	border:none;
+	outline:none;
+	color:#dadad2;
+}
+
+button, 
+.modal-content button,
+.modal-content button:hover {
+	background-color:transparent;	
+}
+
+.modal-content {
+	background-color:rgba(0,0,0,0.7)	
 }
 
 /*Loading*/
@@ -623,11 +644,11 @@ ul li:hover > a > .navtxt::before {
 }	
 
 .stdtrans,
-ul li a i,
-ul li a i:hover,
+ul i,
+ul i:hover,
 .navtxt,
-ul li:hover > a > .navtxt,
-ul li:hover > a > .navtxt::before,
+ul li:hover .navtxt,
+ul li:hover .navtxt::before,
 .navtxt::before,
 .navtoggle,
 .navtogglemove,

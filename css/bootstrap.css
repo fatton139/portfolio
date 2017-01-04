@@ -5832,14 +5832,14 @@ padding: 9px;
 border-radius: 3px;
 }
 .close {
-float: right;
-font-size: 21px;
-font-weight: bold;
-line-height: 1;
-color: #000;
-text-shadow: 0 1px 0 #fff;
-filter: alpha(opacity=20);
-opacity: .2;
+	float: right;
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 1;
+	color: #FFFFFF;
+	text-shadow: 0 1px 0 #fff;
+	filter: alpha(opacity=20);
+	opacity: .2;
 }
 .close:hover,
 .close:focus {
@@ -6748,4 +6748,3 @@ display: none !important;
 }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-
