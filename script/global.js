@@ -26,7 +26,6 @@ $(function() {
 		});
 		
 		$('.modalinject').load('contactmemodal.html');
-		$('.modalinject').load('../contactmemodal.html');
 
 		$("nav a, a.headera").click(function(event){
 			event.preventDefault();
