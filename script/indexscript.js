@@ -25,15 +25,8 @@ $(function() {
 			}
 		});
 		
-		$.ajax({
-            context: "Modal1",
-            dataType : "html",
-            url : "contactmemodal.html",
-            success : function(results) {
-                $(this).html(results);
-            }
-        });
-		
+		$('#Modal1').load('contactmemodal.html');
+
 		$("nav a, a.headera").click(function(event){
 			event.preventDefault();
 			var linkLocation = $(this).attr("href");
