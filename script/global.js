@@ -22,17 +22,11 @@ $(function() {
 						useDelay: 'onload',
 						mobile: false
 					}, 300);
-					sr.reveal('.list .row', {
-						duration: 1500,
-						scale: 0.0,
-						opacity:0,
-						viewFactor: 0.7,
-						easing: 'ease-in-out',
-						mobile: false
-					});
 			}
-		});		
+		});
 		
+		$('body').load('contactmemodal.html');
+
 		$("nav a, a.headera").click(function(event){
 			event.preventDefault();
 			var linkLocation = $(this).attr("href");
