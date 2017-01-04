@@ -25,18 +25,8 @@ $(function() {
 			}
 		});
 		
-		$.ajax({
-			url:'contactmemodal.html',
-			type:'html',
-			error: function()
-			{
-				$('.modalinject').load('../contactmemodal.html');
-			},
-			success: function()
-			{
-				$('.modalinject').load('contactmemodal.html');
-			}
-		});
+		$('.modalinject').load('contactmemodal.html');
+		$('.modalinject').load('../contactmemodal.html');
 
 		$("nav a, a.headera").click(function(event){
 			event.preventDefault();
