@@ -40,7 +40,6 @@ header, .main {
 }
 
 #navigation {
-	height:50vh;
 	width:5.3em;
 	z-index:100;
 	position:fixed;
@@ -92,12 +91,12 @@ ul li:hover .navtxt {
 	width:100%;
 	left:-0.25em;
 	content:"";
-	border-left:solid #a9a9a9 0.01em;	
+	border-left:solid #ea8a23 0.01em;	
 }
 
 ul li:hover .navtxt,
 ul li:hover .navtxt::before {
-	color:rgba(169,169,169,1.00);
+	color:rgba(169,169,169,1);
 	opacity:1;
 }
 
@@ -210,6 +209,10 @@ ul li:hover .navtxt::before {
 	font-size:0.8em;
 }
 
+.liactive i {
+	color:#ea8a23 !important;
+}
+
 @media (max-width: 1200px) {
 	.headercontent h3 {
 		width:57%;
@@ -276,7 +279,7 @@ ul li:hover .navtxt::before {
 	
 	.mobilenav {
 		visibility:visible !important;
-		background-color:rgba(0,0,0,1.00);
+		background-color:rgba(0,0,0,0.8);
 		opacity:1 !important;
 		pointer-events:all !important;
 	}
@@ -314,7 +317,8 @@ ul li:hover .navtxt::before {
 		background:rgba(0,0,0,0.7);
 		padding-left:2em;
 		border-radius:1em;
-		height:1.8em;	
+		height:1.8em;
+		right:25%;	
 	}
 	
 	.ext li:last-child {
@@ -420,8 +424,7 @@ ul li:hover .navtxt::before {
 		width:100vw;
 		margin:auto;	
 		left:0;
-		padding:8em 0 0 0;
-		top:5em;
+		top:0em;
 	}
 	
 	.stripsec {	
@@ -560,7 +563,7 @@ button,
 }
 
 .modal-content {
-	background-color:rgba(0,0,0,0.7)	
+	background-color:rgba(0,0,0,0.8)	
 }
 
 /*Loading*/

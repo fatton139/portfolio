@@ -22,6 +22,24 @@ $(function() {
 						useDelay: 'onload',
 						mobile: false
 					}, 300);
+					sr.reveal('.list .row, .srfade', {
+ 						duration: 1500,
+ 						scale: 0.0,
+ 						opacity:0,
+ 						viewFactor: 0.7,
+ 						easing: 'ease-in-out',
+ 						mobile: false
+ 					});
+					sr.reveal('.srfadeinv', {
+ 						duration: 1500,
+						distance: '50px',
+						origin: 'top',
+ 						scale: 0.0,
+ 						opacity:0,
+ 						viewFactor: 0.1,
+ 						easing: 'ease-in-out',
+ 						mobile: false
+ 					});
 			}
 		});
 		
