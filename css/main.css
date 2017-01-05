@@ -70,7 +70,9 @@ ul i, .navtxt {
 
 ul i:hover,
 .back i,
-.headera:hover {
+.headera:hover,
+.modal a p:hover,
+.modal h6:hover {
 	color:#ea8a23;
 }
 
@@ -550,10 +552,15 @@ button,
 .modal-footer, 
 .modal-content p,
 .modal-content button,
-.modal-content button:hover {
+.modal-content button:hover,
+.modal h6 {
 	border:none;
 	outline:none;
 	color:#dadad2;
+}
+
+.modal hr {
+	width:85%;	
 }
 
 button, 
@@ -565,6 +572,8 @@ button,
 .modal-content {
 	background-color:rgba(0,0,0,0.8)	
 }
+
+
 
 /*Loading*/
 
@@ -664,7 +673,11 @@ ul li:hover .navtxt::before,
 .headera:hover i,
 .headera:hover .bounce,
 .galoverlay,
-.galstd:hover > .galoverlay {
+.galstd:hover > .galoverlay,
+.modal a p,
+.modal a p:hover,
+.modal h6,
+.modal h6:hover {
 	-webkit-transition: all 0.35s;
 	-moz-transition: all 0.35s;
 	transition: all 0.35s;	
