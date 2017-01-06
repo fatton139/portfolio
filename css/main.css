@@ -3,7 +3,7 @@
 body,
 header, 
 .main {
-	background-color:#000000;
+	background-color:#111111;
 	font-size:36px;
 	font-family:'PT Sans Narrow', Arial, sans-serif;
 	width:100%;
@@ -26,6 +26,7 @@ h5 {
 }
 h6, 
 .navtxt h6,
+.galoverlay h5, 
 p {
 	font-size:0.5em;	
 }
@@ -447,19 +448,19 @@ ul li:hover .navtxt::before {
 }
 
 .galstd {
-	width: 250px;
-	height: 250px;
+	width: 240px;
+	height: 240px;
 	margin: 5px;
 	position: relative;
 	float: left;
 }
 
 .gal-w-2x {
-	width:500px;	
+	width:490px;	
 }
 
 .gal-h-2x {
-	height:500px;	
+	height:490px;	
 }
 
 .galoverlay {
@@ -491,20 +492,6 @@ ul li:hover .navtxt::before {
 		margin-left:0;
 		padding-left:0;
 
-	}
-	
-	.galstd {
-		width: 150px;
-		height: 150px;
-		margin: 5px;
-	}
-	
-	.gal-w-2x {
-		width:300px;	
-	}
-	
-	.gal-h-2x {
-		height:300px;	
 	}
 }
 
@@ -553,7 +540,8 @@ button,
 .modal-content p,
 .modal-content button,
 .modal-content button:hover,
-.modal h6 {
+.modal h6,
+.btn-default:active:hover {
 	border:none;
 	outline:none;
 	color:#dadad2;
@@ -565,15 +553,14 @@ button,
 
 button, 
 .modal-content button,
-.modal-content button:hover {
+.modal-content button:hover,
+.btn-default:active:hover {
 	background-color:transparent;	
 }
 
 .modal-content {
 	background-color:rgba(0,0,0,0.8)	
 }
-
-
 
 /*Loading*/
 
@@ -606,6 +593,7 @@ button,
 	left:50%;
 	transform:translateX(-50%);
 	opacity:0;
+	margin-bottom:1em;
 }
 
 .loadcircle {
@@ -623,6 +611,53 @@ button,
 		width:0.9em;
 		height:0.9em;
 	}
+}
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  z-index: 2000;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  width: 200px;
+  background: #fff;
+  border: 1px solid #ea8a23;
+  overflow: hidden;
+}
+
+.pace .pace-progress {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  max-width: 200px;
+  position: fixed;
+  z-index: 2000;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  height: 100%;
+  width: 100%;
+  background: #ea8a23;
+}
+
+.pace.pace-inactive {
+  display: none;
 }
 
 /*Utilities Classes*/

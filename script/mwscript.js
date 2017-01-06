@@ -7,7 +7,16 @@ $(function() {
 			percentPosition: true,
 			rezise:false, 
 			itemSelector: '.galstd',
-			layoutMode: 'masonry'
+			layoutMode: 'packery'
 		});
+		$('.gal a').colorbox({
+			maxWidth : '90%',
+			maxHeight : '90%',
+			opacity : 0.8,
+			transition : 'elastic',
+			current : "image {current} of {total}",
+			scrolling: false,
+			rel: "g1"
+			});
 	}); //end of document ready
 }); //end of use

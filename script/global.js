@@ -13,35 +13,35 @@ $(function() {
 			if ( $(".loading").hasClass("loaded") ) {
 				//alert('DOM ready');	
 				$("body").fadeIn(2000);
-				window.sr = ScrollReveal();
-					sr.reveal('nav li', {
-						duration: 1000,
-						scale: 0.0,
-						opacity:0,
-						easing: 'ease-in-out',
-						useDelay: 'onload',
-						mobile: false
-					}, 300);
-					sr.reveal('.list .row, .srfade', {
- 						duration: 1500,
- 						scale: 0.0,
- 						opacity:0,
- 						viewFactor: 0.7,
- 						easing: 'ease-in-out',
- 						mobile: false
- 					});
-					sr.reveal('.srfadeinv', {
- 						duration: 1500,
-						distance: '50px',
-						origin: 'top',
- 						scale: 0.0,
- 						opacity:0,
- 						viewFactor: 0.1,
- 						easing: 'ease-in-out',
- 						mobile: false
- 					});
 			}
 		});
+		window.sr = ScrollReveal();
+			sr.reveal('nav li', {
+				duration: 1000,
+				scale: 0.0,
+				opacity:0,
+				easing: 'ease-in-out',
+				useDelay: 'onload',
+				mobile: false
+			}, 300);
+			sr.reveal('.list .row, .srfade', {
+				duration: 1500,
+				scale: 0.0,
+				opacity:0,
+				viewFactor: 0.7,
+				easing: 'ease-in-out',
+				mobile: false
+			});
+			sr.reveal('.srfadeinv', {
+				duration: 1500,
+				distance: '50px',
+				origin: 'top',
+				scale: 0.0,
+				opacity:0,
+				viewFactor: 0.9,
+				easing: 'ease-in-out',
+				mobile: false
+			});
 		
 		$('.modalinject').load('contactmemodal.html');
 
