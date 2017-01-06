@@ -3,6 +3,9 @@
 $(function() {
     "use strict";					
 	$(document).ready(function() {
+		$('.modalinject').load('injects/contactmemodal.html');
+		$('.extinject').load('injects/subext.html');
+		$('.navinject').load('injects/navigation.html');
 		setTimeout(function(){
 			$(".loadanimate,.loadcircle").css("opacity","1");
 		}, 1000);
@@ -15,6 +18,7 @@ $(function() {
 				$("body").fadeIn(2000);
 			}
 		});
+		
 		window.sr = ScrollReveal();
 			sr.reveal('nav li', {
 				duration: 1000,
@@ -42,8 +46,6 @@ $(function() {
 				easing: 'ease-in-out',
 				mobile: false
 			});
-		
-		$('.modalinject').load('contactmemodal.html');
 
 		$("nav a, a.headera").click(function(event){
 			event.preventDefault();
