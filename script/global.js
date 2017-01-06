@@ -5,14 +5,12 @@ $(function() {
 	$(document).ready(function() {
 		$('.modalinject').load('injects/contactmemodal.html');
 		$('.extinject').load('injects/subext.html');
-		$('.navinject').load('injects/navigation.html');
 		setTimeout(function(){
 			$(".loadanimate,.loadcircle").css("opacity","1");
 		}, 1000);
 		$(window).bind("load", function() { 
 			$("body").css("display", "none");	
 			$(".loading").addClass("loaded");	
-	
 			if ( $(".loading").hasClass("loaded") ) {
 				//alert('DOM ready');	
 				$("body").fadeIn(2000);

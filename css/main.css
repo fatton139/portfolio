@@ -574,6 +574,7 @@ button,
 	visibility:visible;
 	display:flex;
 	align-items:center;
+	padding-bottom:1em;
 }
 
 .no-js .loading,
@@ -591,15 +592,12 @@ button,
 	border-radius:1em;
 	position:absolute;
 	left:50%;
-	top:45%;
 	transform:translateX(-50%);
 	opacity:0;
-	margin-bottom:1em;
 }
 
 .loadcircle {
 	background-color:#000;
-	border-radius:1em;
 	animation:loading 2s infinite ease-in-out;
 }
 
