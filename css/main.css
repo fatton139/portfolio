@@ -73,7 +73,8 @@ ul i:hover,
 .back i,
 .headera:hover,
 .modal a p:hover,
-.modal h6:hover {
+.modal h6:hover,
+.des span {
 	color:#ea8a23;
 }
 
@@ -512,6 +513,14 @@ ul li:hover .navtxt::before {
 
 .list .orange {
 	letter-spacing:0.1em;	
+}
+
+.list h4 {
+	font-size:1.3em;
+}
+
+.list li:first-child p {
+	font-weight:800;	
 }
 
 @media (max-width: 1200px) {

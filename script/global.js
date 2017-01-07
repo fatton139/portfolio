@@ -24,13 +24,14 @@ $(function() {
 				opacity:0,
 				easing: 'ease-in-out',
 				useDelay: 'onload',
-				mobile: false
+				mobile: true,
+				viewFactor:0
 			}, 300);
 			sr.reveal('.list .row, .srfade', {
 				duration: 1500,
 				scale: 0.0,
 				opacity:0,
-				viewFactor: 0.7,
+				viewFactor: 0.2,
 				easing: 'ease-in-out',
 				mobile: false
 			});
@@ -40,7 +41,7 @@ $(function() {
 				origin: 'top',
 				scale: 0.0,
 				opacity:0,
-				viewFactor: 0.9,
+				viewFactor: 0.2,
 				easing: 'ease-in-out',
 				mobile: false
 			});
