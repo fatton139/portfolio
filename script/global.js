@@ -24,16 +24,18 @@ $(function() {
 				opacity:0,
 				easing: 'ease-in-out',
 				useDelay: 'onload',
-				mobile: true,
-				viewFactor:0
+				viewFactor:0.1,
+				mobile:false,
+				viewOffset: { top: -10000 }
 			}, 300);
-			sr.reveal('.list .row, .srfade', {
+			sr.reveal('.srfade', {
 				duration: 1500,
 				scale: 0.0,
 				opacity:0,
-				viewFactor: 0.2,
+				viewFactor: 0.1,
 				easing: 'ease-in-out',
-				mobile: false
+				mobile:false,
+				viewOffset: { top: -100 }
 			});
 			sr.reveal('.srfadeinv', {
 				duration: 1500,
@@ -41,9 +43,9 @@ $(function() {
 				origin: 'top',
 				scale: 0.0,
 				opacity:0,
-				viewFactor: 0.2,
+				viewFactor: 0.1,
 				easing: 'ease-in-out',
-				mobile: false
+				mobile:false
 			});
 
 		$("nav a, a.headera").click(function(event){
@@ -60,6 +62,11 @@ $(function() {
 			$("#navigation").toggleClass("mobilenav");
 		});
 		
+		$(".navclose").click(function(){
+			$(".navtoggle").toggleClass("navtogglemove");
+			$("#navigation").removeClass("mobilenav");
+		});
+
 	}); //end of document ready
 }); //end of use
 
