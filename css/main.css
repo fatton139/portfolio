@@ -634,7 +634,7 @@ button,
 	visibility:visible;
 	display:flex;
 	align-items:center;
-	padding-bottom:1em;
+	padding-bottom:3em;
 }
 
 .no-js .loading,
