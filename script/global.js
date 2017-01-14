@@ -55,14 +55,22 @@ $(function() {
 		});
 			
 		$(".navtoggle").click(function(){
-			$(this).toggleClass("navtogglemove");
-			$("#navigation").toggleClass("mobilenav");
+			$(".navtoggle").addClass("navtogglemove");
+			$("#navigation").addClass("mobilenav");
+			$("nav i").css({opacity:"1", visibility:"visible"});
 		});
 		
 		$(".navclose").click(function(){
-			$(".navtoggle").toggleClass("navtogglemove");
+			$(".navtoggle").removeClass("navtogglemove");
 			$("#navigation").removeClass("mobilenav");
+			$("nav i").css({opacity:"0", visibility:"hidden"});
 		});
+		
+		//var width = $(window).width();
+		//if(width > 768) {
+		//	$("nav i").css({opacity:"1", visibility:"visible"});
+		//	$(".navtxt").css({opacity:"1", visibility:"visible"});
+		//}
 		
 		$(".back").click(function(){
 			$(".ext").removeClass("ext-white");

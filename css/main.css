@@ -48,7 +48,8 @@ header, .main {
 }
 
 .navtoggle {
-	visibility:hidden;	
+	visibility:hidden;
+	display:none;
 }
 
 ul {
@@ -172,12 +173,11 @@ ul li:hover .navtxt::before {
 }
 
 .navclose {
-	visibility:hidden !important;
-	position:absolute;	
+	display:none;
 }
 
-.navclose h6 {
-	font-weight:800;	
+.navclose i {	
+	color:#ea8a23;
 }
 
 @keyframes bounce {
@@ -254,16 +254,29 @@ ul li:hover .navtxt::before {
 	nav i {
 		visibility:hidden;
 		opacity:0;
-		pointer-events:none;	
+		pointer-events:none;
+		padding-top:1em;	
 	}
 	
 	nav li {
-		margin:0;
-		padding-bottom:0.5em;
-		margin-left:-1em;
-		border-bottom:1px solid #a9a9a9;
+		height:19vh;
+		width:50%;
+		padding:0;
+		border:none;
 		opacity:1 !important;
 		transform:translateY(0px) !important;
+		float:left;
+	}
+	
+	ul li:hover .navtxt,
+	.navtxt::before {
+		position:relative;
+		left:0;
+		text-align:center;	
+	}
+	
+	.navtxt::before {
+		display:none;
 	}
 	
 	#navigation {
@@ -275,15 +288,19 @@ ul li:hover .navtxt::before {
 	
 	#navbar {
 		margin-top:0;
-		position:relative;	
+		position:relative;
 	}
 	
 	.navtxt {
 		opacity:1;
+		left:0;
 		color:rgba(169,169,169,1);
+		position:relative;
+		text-align:center;
 	}
 	
 	.navtoggle {
+		display:block;
 		visibility:visible;
 		width:2em;
 		height:2em;
@@ -363,15 +380,10 @@ ul li:hover .navtxt::before {
 	}
 	
 	.navclose {
-		position:absolute;
-		border-top:1px #ea8a23 solid;
-		visibility:visible !important;
-		width:100%;
-		margin:0;
-		padding:1.5em;
-		color:white;
-		z-index:50;
+		display:block;
+	
 	}
+
 	.back {
 		margin-top:0em;	
 	}
@@ -380,10 +392,6 @@ ul li:hover .navtxt::before {
 @media (max-width: 568px) {
 	#navigation {
 		width:100%;
-	}
-	
-	nav li {
-		margin-left: -2em;	
 	}
 }
 
