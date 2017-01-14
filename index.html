@@ -7,7 +7,7 @@
         <meta name="author" content="fatton">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link type="text/plain" rel="author" href="humans.txt"/>
-        <title>folio-ext</title>
+        <title>ahXdesign</title>
         
          <!-- Main CSS -->
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -17,9 +17,13 @@
         <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
         <link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link href="css/colorbox.css" rel="stylesheet" type="text/css">
         
-        <link rel="import" href="contactmemodal.html">
-        
+        <!-- Prefetch -->
+		<link rel="prefetch-dns" href="about.html">
+        <link rel="prefetch-dns" href="myworks.html">
+        <link rel="prefetch-dns" href="projectslist.html">
+		
     </head>
     <body>
     	<div class="loading">
@@ -32,24 +36,24 @@
         	<div id="navigation" class="ycenter">
             	<nav id="navbar">
                 	<ul>
-                    	<li>
-                        	<a href="about/index.html">
+                    	<li class="ajax">
+                        	<a href="about.html" js="global.js">
                             	<i class="ion-ios-settings"></i>
                                 <span class="navtxt">
                                     <h6>About Me</h6>
                                 </span>                             
                             </a>
                         </li>
-                        <li>
-                        	<a href="myworks/index.html">
+                        <li class="ajax">
+                        	<a href="myworks.html" js="global.js">
                             	<i class="ion-images"></i>
                                 <span class="navtxt">
                                     <h6>My Works</h6>
                                 </span> 
                             </a>
                         </li>
-                        <li>
-                        	<a href="projectlist/index.html">
+                        <li class="ajax">
+                        	<a href="projectslist.html" js="global.js">
                             	<i class="ion-ios-folder-outline"></i>
                                 <span class="navtxt">
                                     <h6>Project List</h6>
@@ -57,18 +61,18 @@
                             </a>
                         </li>
                         <li>
-                        	<a href="shop/index.html">
+                        	<a style="pointer-events: none;">
                             	<i class="ion-cube"></i>
                                 <span class="navtxt">
-                                    <h6>Shop</h6>
+                                    <h6>Shop (Disabled)</h6>
                                 </span> 
                             </a>
                         </li>
                         <li>
-                        	<a href="association/index.html">
+                        	<a style="pointer-events: none;">
                             	<i class="ion-ios-color-filter-outline"></i>
                                 <span class="navtxt">
-                                    <h6>Association</h6>
+                                    <h6>Association (Disabled)</h6>
                                 </span> 
                             </a>
                         </li>
@@ -80,34 +84,69 @@
                                 </span> 
                             </button>
                         </li>
+                        <li class="ajax back">
+                        	<a href="indexbody.html" js="global.js">
+                            	<i class="ion-more"></i>
+                                <span class="navtxt">
+                                    <h6>Home</h6>
+                                </span> 
+                            </a>
+                        </li>
+                        <li class="navclose">
+                            <i class="ion-close-round"></i>
+                            <span class="navtxt">
+                                <h6>Close</h6>
+                            </span> 
+                        </li>
                     </ul>
                 </nav>
             </div>
             
-			<div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="navtoggle text-center">
+                <i class="ion-navicon"></i>
+            </div>
+            
+            <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">      
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                             <h5>Contact Me</h5>
                         </div>
-                        <div class="modal-body">
-                        	<div class="row">
-                            	<div class="col-lg-6">
-                                	<p>Cairns, Australia</p>
+                        <div class="modal-body text-center">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p>Cairns, Australia</p>
                                     <p>T: 0424 217 158</p>
-                                    <p>E: leletonyli.13944@yahoo.com.au</p>
+                                    <p>E: info@ahxdesign.me</p>
                                 </div>
                                 <div class="col-lg-6">
-                                	<a href="https://www.facebook.com/" target="_blank">
-                                    	<p>Facebook</p>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <p>Facebook</p>
                                     </a>
-                                    <a href="https://www.twitter.com/" target="_blank">
-                                    	<p>Twitter</p>
+                                    <a href="https://twitter.com/xaXises" target="_blank">
+                                        <p>Twitter</p>
                                     </a>
-                                    <a href="https://www.github.com/" target="_blank">
-                                    	<p>Github</p>
+                                    <a href="https://github.com/aXises" target="_blank">
+                                        <p>Github</p>
                                     </a> 
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <a href="https://docs.google.com/document/d/1mD1gMSdj8JNye-dg4n_xn1Sw7qAKFwVFHJBqCC8sE30/view" target="_blank">
+                                        <h6>View Résumé</h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <a href="http://ourdisclaimer.com/?i=ahxdesign.me" target="_blank">
+                                        <p style="font-size:0.4em">DISCLAIMER</p>
+                                    </a>
+                                    <p style="font-size:0.4em">COPYRIGHT&copy; 2017 XINYI LI. SOME RIGHTS RESERVED. ALL TEXTS, PICTURES, SOUND, VIDEO AND ANIMATION FILES ARE SUBJECT TO COPYRIGHT.</p>
                                 </div>
                             </div>
                         </div>
@@ -115,85 +154,103 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-            	</div>
-            </div>
-            
-        	<div class="container-fluid">
-            	<div class="row">
-                	<header class="imgcov" data-ibg-bg="img/header-min.jpg">
-                    	<a href="about/index.html" class="headera">
-                        	<div class="headercontent ycenter">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <h5 class="nomarg">Xinyi <span>Tony</span> Li</h5>
-                                        <p>Digital Designer</p>
-                                    </div>
-                                    <hr class="nomarg text-center" align="center">
-                                    <div class="col-lg-6">
-                                        <h3 class="nomarg">Portfolio</h3>
-                                    </div>
-                                </div>
-                                <div class="row" style="margin-top:1em;">
-                                    <div class="col-lg-12 text-center bounce">
-                                        <i class="ion-chevron-down buttonarrow"></i>
-                                    </div>
-                                </div>
-                        	</div>
-                        </a>
-                        <div class="navtoggle text-center">
-                        	<i class="ion-navicon"></i>
-                        </div>
-                        <div class="ext">
-                        	<ul>
-                            	<li>
-                                	<a type="button" data-toggle="modal" data-target="#myModal">
-                                		<i class="ion-android-mail"></i>
-                                    </a>
-                                </li>
-                            	<li>
-                                	<a href="https://www.facebook.com/" target="_blank">
-                                		<i class="ion-social-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                	<a href="https://www.twitter.com/" target="_blank">
-                                		<i class="ion-social-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                	<a href="https://www.github.com/" target="_blank">
-                                		<i class="ion-social-github"></i>
-                                    </a>
-                                </li>
-                                <li onclick="toggleFullScreen(document.body)">
-                                	<a>
-                                		<i class="ion-arrow-expand"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </header>
                 </div>
             </div>
-            
+			
+            <div id="bodycontent">
+                <div class="container-fluid">
+                    <div class="row">
+                        <header class="imgcov" data-ibg-bg="img/header-min.jpg">
+                            <a href="about.html" class="headera">
+                                <div class="headercontent ycenter">
+                                    <div class="row srfade">
+                                        <div class="col-lg-6">
+                                            <h5 class="nomarg">Xinyi <span>Tony</span> Li</h5>
+                                            <p>Digital Designer</p>
+                                        </div>
+                                        <hr class="nomarg text-center" align="center">
+                                        <div class="col-lg-6">
+                                            <h3 class="nomarg">Portfolio</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:1em;">
+                                        <div class="col-lg-12 text-center bounce">
+                                            <i class="ion-chevron-down buttonarrow"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </header>
+                    </div>
+                </div>
+            </div>
+            <div class="ext ext-white">
+                <ul>
+                    <li>
+                        <a type="button" data-toggle="modal" data-target="#myModal">
+                            <i class="ion-android-mail"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/xaXises" target="_blank">
+                            <i class="ion-social-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">
+                            <i class="ion-social-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/aXises" target="_blank">
+                            <i class="ion-social-github"></i>
+                        </a>
+                    </li>
+                    <li href="#" class="fullscreen" onclick="toggleFullScreen(document.body)">
+                        <a>
+                            <i class="ion-arrow-expand"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>  
         </div> <!--Wrapper End-->
     </body>
     
      <!-- Main Scripts -->
 	<script src="script/jquery.js"></script>
         <!-- jQuery Fallback -->
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.0.0.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.0.0.min.js"></script>
         <script>
         if (typeof jQuery == 'undefined') {
-            document.write(unescape("%3Cscript src='/script/jquery-2.0.0.min.js' type='text/javascript'%3E%3C/script%3E"));
+            document.write(unescape("%3Cscript src='script/jquery-2.0.0.min.js' type='text/javascript'%3E%3C/script%3E"));
         }
         </script>     
     <script src="script/bootstrap.min.js"></script>
-    <script src="script/indexscript.js"></script>
+   
 
     <!-- Secondary Scripts -->
+    <script src="script/pace.min.js"></script>
     <script src="script/jquery.interactive_bg.min.js"></script>
     <script src="script/scrollreveal.min.js"></script>
-    <script src="script/flowtype.js"></script>
+    <script src="script/isotope.min.js"></script>
+    <script src="script/packery-mode.pkgd.min.js"></script>
+    <script src="script/jquery.colorbox-min.js"></script>
+   
+    <script src="script/global.js"></script>
+    
+    <!-- User remain on hash page -->
+    <script>
+		var hash = window.location.hash.substring(1);
+		if(hash) {
+			$("#bodycontent").load(hash);
+			$.getScript("script/global.js");
+			if(hash !== "indexbody.html") {
+				$(".ext").addClass("ext-white");
+			}
+			else {
+				$(".ext").removeClass("ext-white");
+			}	
+		}
+	</script>
         
 </html>
