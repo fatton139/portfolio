@@ -2,20 +2,26 @@
 $(function() {
     "use strict";					
 	$(document).ready(function() {
-		$('.extinject').load('injects/subext.html');
+		$("nav ul").css("opacity", "0");
+		$("nav ul").animate({opacity:"1"},1500);
 		setTimeout(function(){
 			$(".loadanimate,.loadcircle").css("opacity","1");
 		}, 1000);
 		$(window).bind("load", function() { 
 			$("body").css("display", "none");	
+			
 			$(".loading").addClass("loaded");	
 			if ( $(".loading").hasClass("loaded") ) {
 				//alert('DOM ready');	
 				$("body").fadeIn(2000);
+
 			}
 		});
 		
+		
+		
 		$(".ajax a, a.headera").click(function(event){
+			$(".ext").addClass("ext-white");
 			event.preventDefault();
 			var content = $(this).attr("href");
 			var script = $(this).attr("js");
@@ -27,7 +33,7 @@ $(function() {
         		//alert("Data: " + data + "\nStatus: " + status);
 			});	
 			if (content === "index.html") {
-				$("body").load("indexbody.html", loading);
+				$("body").load("indexbody.html ", loading);
 			}
 			else {
 				$("body").fadeOut(1000, loading);
@@ -37,27 +43,41 @@ $(function() {
 				$(".loading").removeClass("loaded");
 				$(document).ready(function() {
 					$("#bodycontent").load(content, function(){
-						$('.extinject').load("injects/subext.html");
 						$.getScript("script/" + script);	
-						$("body").fadeIn(2000);
+						$("body").fadeIn(1000);
 					});
-				});
-				//alert("loaded");
-				$(document).ready(function() {
-					$(".loading").addClass("loaded");
-					$("body").css("overflow", "auto");	
+					//alert("loaded");
+					$(".loading").addClass("loaded", function(){
+						$("body").css("overflow", "auto");
+					});
 				});
 			}
 		});
 			
 		$(".navtoggle").click(function(){
-			$(this).toggleClass("navtogglemove");
-			$("#navigation").toggleClass("mobilenav");
+			$(".navtoggle").addClass("navtogglemove");
+			$("#navigation").addClass("mobilenav");
+			$("nav i").css({opacity:"1", visibility:"visible"});
 		});
 		
 		$(".navclose").click(function(){
-			$(".navtoggle").toggleClass("navtogglemove");
+			$(".navtoggle").removeClass("navtogglemove");
 			$("#navigation").removeClass("mobilenav");
+			$("nav i").css({opacity:"0", visibility:"hidden"});
+		});
+		
+		//var width = $(window).width();
+		//if(width > 768) {
+		//	$("nav i").css({opacity:"1", visibility:"visible"});
+		//	$(".navtxt").css({opacity:"1", visibility:"visible"});
+		//}
+		
+		$(".back").click(function(){
+			$(".ext").removeClass("ext-white");
+		});
+		
+		$(".back").click(function(){
+			$(".ext").removeClass("ext-white");
 		});
 		
 		$("header").interactive_bg({
