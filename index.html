@@ -7,7 +7,7 @@
         <meta name="author" content="fatton">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link type="text/plain" rel="author" href="humans.txt"/>
-        <title>folio-ext</title>
+        <title>ahXdesign</title>
         
          <!-- Main CSS -->
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -19,7 +19,10 @@
         <link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
         <link href="css/colorbox.css" rel="stylesheet" type="text/css">
         
-		<link rel="prerender" href="myworks.html">
+        <!-- Prefetch -->
+		<link rel="prefetch-dns" href="about.html">
+        <link rel="prefetch-dns" href="myworks.html">
+        <link rel="prefetch-dns" href="projectslist.html">
 		
     </head>
     <body>
@@ -173,39 +176,39 @@
                             <div class="navtoggle text-center">
                                 <i class="ion-navicon"></i>
                             </div>
-                            <div class="ext">
-                                <ul>
-                                    <li>
-                                        <a type="button" data-toggle="modal" data-target="#myModal">
-                                            <i class="ion-android-mail"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/xaXises" target="_blank">
-                                            <i class="ion-social-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="" target="_blank">
-                                            <i class="ion-social-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://github.com/aXises" target="_blank">
-                                            <i class="ion-social-github"></i>
-                                        </a>
-                                    </li>
-                                    <li href="#" class="fullscreen" onclick="toggleFullScreen(document.body)">
-                                        <a>
-                                            <i class="ion-arrow-expand"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>  
                         </header>
                     </div>
                 </div>
             </div>
+            <div class="ext ext-white">
+                <ul>
+                    <li>
+                        <a type="button" data-toggle="modal" data-target="#myModal">
+                            <i class="ion-android-mail"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/xaXises" target="_blank">
+                            <i class="ion-social-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">
+                            <i class="ion-social-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/aXises" target="_blank">
+                            <i class="ion-social-github"></i>
+                        </a>
+                    </li>
+                    <li href="#" class="fullscreen" onclick="toggleFullScreen(document.body)">
+                        <a>
+                            <i class="ion-arrow-expand"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>  
         </div> <!--Wrapper End-->
     </body>
     
@@ -230,13 +233,20 @@
     <script src="script/jquery.colorbox-min.js"></script>
    
     <script src="script/global.js"></script>
+    
+    <!-- User remain on hash page -->
     <script>
 		var hash = window.location.hash.substring(1);
-		if(hash){
+		if(hash) {
 			$("#bodycontent").load(hash);
-			$.getScript("script/global.js");	
-		}	
+			$.getScript("script/global.js");
+			if(hash !== "indexbody.html") {
+				$(".ext").addClass("ext-white");
+			}
+			else {
+				$(".ext").removeClass("ext-white");
+			}	
+		}
 	</script>
-    
         
 </html>
