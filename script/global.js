@@ -2,8 +2,6 @@
 $(function() {
     "use strict";					
 	$(document).ready(function() {
-		$("nav ul").css("opacity", "0");
-		$("nav ul").animate({opacity:"1"},1500);
 		setTimeout(function(){
 			$(".loadanimate,.loadcircle").css("opacity","1");
 		}, 1000);
