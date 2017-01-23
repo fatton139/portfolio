@@ -6,52 +6,33 @@ $(function() {
 			$(".loadanimate,.loadcircle").css("opacity","1");
 		}, 1000);
 		$(window).bind("load", function() { 
-			$("body").css("display", "none");	
-			
-			$(".loading").addClass("loaded");	
-			if ( $(".loading").hasClass("loaded") ) {
-				//alert('DOM ready');	
-				$("body").fadeIn(2000);
-
-			}
+			$(".loading").addClass("loaded");
 		});
-		
-		
 		
 		$(".ajax a, a.headera").click(function(event){
 			$(".ext").addClass("ext-white");
 			event.preventDefault();
 			var content = $(this).attr("href");
 			var script = $(this).attr("js");
-			
 			window.location.hash = content;
-
-			//alert("script/" + script);
-			$.get(content, function(data, status){
-        		//alert("Data: " + data + "\nStatus: " + status);
-			});	
-			if (content === "index.html") {
-				$("body").load("indexbody.html ", loading);
-			}
-			else {
-				$("body").fadeOut(1000, loading);
-			}
-			function loading() {
-				//alert("loading");
-				$(".loading").removeClass("loaded");
-				$(document).ready(function() {
-					$("#bodycontent").load(content, function(){
-						$.getScript("script/" + script);	
-						$("body").fadeIn(1000);
-					});
-					//alert("loaded");
-					$(".loading").addClass("loaded", function(){
-						$("body").css("overflow", "auto");
-					});
+			$(".loading").removeClass("loaded");
+			$("body").css("overflow", "hidden");
+			setTimeout(function(){
+				$("#bodycontent").load(content, function(response, status){
+					if (status === "success") {
+						setTimeout(function(){
+							$(".loading").addClass("loaded");
+							$("body").css("overflow", "auto");
+							$.getScript("script/" + script);	
+						}, 700);
+					}
+					else {
+						alert("bad request");	
+					}
 				});
-			}
+			}, 1500);
 		});
-			
+	
 		$(".navtoggle").click(function(){
 			$(".navtoggle").addClass("navtogglemove");
 			$("#navigation").addClass("mobilenav");

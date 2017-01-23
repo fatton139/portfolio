@@ -647,9 +647,9 @@ button,
 
 .no-js .loading,
 .loaded {
-	background-color:#a9a9a9;
 	visibility:hidden;
 	opacity:0;
+	pointer-events:none;
 }
 
 .loadanimate,
@@ -661,7 +661,6 @@ button,
 	position:absolute;
 	left:50%;
 	transform:translateX(-50%);
-	opacity:0;
 }
 
 .loadcircle {
@@ -768,8 +767,6 @@ ul li:hover .navtxt::before,
 .navtogglemove,
 #navigation,
 .mobilenav,
-.loaded,
-.loading,
 .headera,
 .headera:hover,
 .headera:hover i,
@@ -783,6 +780,13 @@ ul li:hover .navtxt::before,
 	-webkit-transition: all 0.35s;
 	-moz-transition: all 0.35s;
 	transition: all 0.35s;	
+}
+
+.loaded,
+.loading {
+	-webkit-transition: all 2s;
+	-moz-transition: all 2s;
+	transition: all 2s;	
 }
 
 /*Global*/
