@@ -363,6 +363,7 @@ ul li:hover .navtxt::before {
 		border-radius:1em;
 		height:1.8em;
 		right:0;
+		z-index:20;
 	}
 	
 	.ext ul {
@@ -381,6 +382,7 @@ ul li:hover .navtxt::before {
 	
 	.navclose {
 		display:block;
+		margin:0;
 	
 	}
 

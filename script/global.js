@@ -55,10 +55,6 @@ $(function() {
 			$(".ext").removeClass("ext-white");
 		});
 		
-		$(".back").click(function(){
-			$(".ext").removeClass("ext-white");
-		});
-		
 		$("header").interactive_bg({
 			strength: 3,              
 			scale: 1.01,               
@@ -113,3 +109,5 @@ function toggleFullScreen(elem) {
         }
     }
 }
+
+var global = true;

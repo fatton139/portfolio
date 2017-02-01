@@ -231,19 +231,20 @@
     <script src="script/jquery.colorbox-min.js"></script>
     <script src="script/global.js"></script>
     
-    <!-- User remain on hash page -->
     <script>
-		var hash = window.location.hash.substring(1);
-		if(hash) {
-			$("#bodycontent").load(hash);
-			$.getScript("script/global.js");
-			if(hash !== "indexbody.html") {
-				$(".ext").addClass("ext-white");
-			}
-			else {
-				$(".ext").removeClass("ext-white");
-			}	
+	var hash = window.location.hash.substring(1);
+	if(hash) {
+		$("#bodycontent").load(hash);
+		$.getScript("script/global.js");
+	}
+	</script>
+	<script>
+	function HashChange() {
+		if (typeof window.global === "undefined") {
+		$.getScript("script/global.js");
 		}
+	}
+	window.onhashchange = HashChange;
 	</script>
         
 </html>
