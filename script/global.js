@@ -2,6 +2,7 @@
 $(function() {
     "use strict";					
 	$(document).ready(function() {
+		updatesize();
 		setTimeout(function(){
 			$(".loadanimate,.loadcircle").css("opacity","1");
 		}, 1000);
@@ -51,6 +52,66 @@ $(function() {
 		//	$(".navtxt").css({opacity:"1", visibility:"visible"});
 		//}
 		
+		$(window).resize(function () {
+			updatesize();
+		});
+		
+		var desktop;
+		var mobile;
+		var size;
+		
+		function updatesize() {
+			if ($(window).width() > 767) {
+				if (typeof(desktop) === "undefined") {
+					desktop = true;
+					mobile = undefined;
+					console.log("Desktop");
+					inc();
+					
+				}
+			} else {
+				if (typeof(mobile) === "undefined") {
+					mobile = true;
+					desktop = undefined;
+					console.log("Mobile");
+					dec();
+				}
+			}
+			//console.log("mobile is "+mobile);
+			//console.log("desktop is "+desktop);
+			//console.log("size is "+size);
+			if (typeof(desktop) !== "undefined" && typeof(size) === "undefined") {
+				//console.log("on desktop but large");
+				dec();
+			}
+			if (typeof(mobile) !== "undefined" && typeof(size) !== "undefined") {
+				//console.log("on mobile but large");
+			}
+		}
+		
+		function inc() {
+			$(".galstd").each(function(){
+				var galwidth = $(this).width()*1.5;
+				var galheight = $(this).height()*1.5;
+				$(this).css({
+					width: galwidth,
+					height: galheight
+				});	
+			});
+		}
+		
+		function dec() {
+			$(".galstd").each(function(){
+				var galwidth = $(this).width()/1.5;
+				var galheight = $(this).height()/1.5;
+				$(this).css({
+					width: galwidth,
+					height: galheight
+				});	
+			});
+			size = true;
+		}
+
 		$(".back").click(function(){
 			$(".ext").removeClass("ext-white");
 		});

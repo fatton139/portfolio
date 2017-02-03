@@ -236,6 +236,12 @@ ul li:hover .navtxt::before {
 	color:#ea8a23 !important;
 }
 
+@media (max-width: 1377px) {
+	.headercontent {
+		left:60%;
+	}
+}
+
 @media (max-width: 1200px) {
 	.headercontent h3 {
 		width:57%;
