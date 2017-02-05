@@ -230,20 +230,22 @@
     <script src="script/packery-mode.pkgd.min.js"></script>
     <script src="script/jquery.colorbox-min.js"></script>
     <script src="script/global.js"></script>
+    <script src="script/page.js"></script>
     
     <script>
-	var hash = window.location.hash.substring(1);
-	if(hash) {
-		$("#bodycontent").load(hash);
-		$.getScript("script/global.js");
-	}
+	//var hash = window.location.hash.substring(1);
+	//if(hash) {
+	//	$("#bodycontent").load(hash);
+	//	$.getScript("script/global.js");
+	//}
 	</script>
 	<script>
 	function HashChange() {
 		if (typeof window.global === "undefined") {
-		$.getScript("script/global.js");
+			$.getScript("script/global.js");
 		}
 	}
+
 	window.onhashchange = HashChange;
 	</script>
         

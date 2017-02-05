@@ -6,32 +6,10 @@ $(function() {
 		setTimeout(function(){
 			$(".loadanimate,.loadcircle").css("opacity","1");
 		}, 1000);
+		
 		$(window).bind("load", function() { 
 			$(".loading").addClass("loaded");
-		});
-		
-		$(".ajax a, a.headera").click(function(event){
-			$(".ext").addClass("ext-white");
-			event.preventDefault();
-			var content = $(this).attr("href");
-			var script = $(this).attr("js");
-			window.location.hash = content;
-			$(".loading").removeClass("loaded");
-			$("body").css("overflow", "hidden");
-			setTimeout(function(){
-				$("#bodycontent").load(content, function(response, status){
-					if (status === "success") {
-						setTimeout(function(){
-							$(".loading").addClass("loaded");
-							$("body").css("overflow", "auto");
-							$.getScript("script/" + script);	
-						}, 700);
-					}
-					else {
-						alert("bad request");	
-					}
-				});
-			}, 1500);
+			updatesize();
 		});
 	
 		$(".navtoggle").click(function(){
@@ -61,13 +39,20 @@ $(function() {
 		var size;
 		
 		function updatesize() {
+			var visibility = $("nav i").css("visibility");
+			
+			if ($(window).width() > 767 && visibility === "hidden") {
+				$("nav i").css({
+				opacity: "1",
+				visibility: "visible"
+				});
+			}
 			if ($(window).width() > 767) {
 				if (typeof(desktop) === "undefined") {
 					desktop = true;
 					mobile = undefined;
 					console.log("Desktop");
-					inc();
-					
+					//inc();
 				}
 			} else {
 				if (typeof(mobile) === "undefined") {
@@ -77,27 +62,18 @@ $(function() {
 					dec();
 				}
 			}
-			//console.log("mobile is "+mobile);
-			//console.log("desktop is "+desktop);
-			//console.log("size is "+size);
-			if (typeof(desktop) !== "undefined" && typeof(size) === "undefined") {
-				//console.log("on desktop but large");
-				dec();
-			}
-			if (typeof(mobile) !== "undefined" && typeof(size) !== "undefined") {
-				//console.log("on mobile but large");
-			}
 		}
 		
 		function inc() {
 			$(".galstd").each(function(){
-				var galwidth = $(this).width()*1.5;
-				var galheight = $(this).height()*1.5;
+				var galwidth = $(this).width();
+				var galheight = $(this).height();
 				$(this).css({
 					width: galwidth,
 					height: galheight
-				});	
+				});
 			});
+			size = inc;
 		}
 		
 		function dec() {
@@ -109,7 +85,7 @@ $(function() {
 					height: galheight
 				});	
 			});
-			size = true;
+			size = dec;
 		}
 
 		$(".back").click(function(){
