@@ -1,14 +1,118 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Portfolio</title>
-    <%= csrf_meta_tags %>
+<html lang="en">
+    <head>
+        <%= csrf_meta_tags %>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="tp">
+        <meta name="author" content="fatton">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/plain" rel="author" href="humans.txt"/>
+        <title>aXdesign</title>
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="iapple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="ifavicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+        <meta name="application-name" content="&nbsp;"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="img/icon/mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="img/icon/mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="img/icon/mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="img/icon/mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="img/icon/mstile-310x310.png" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+        
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <div class="loading">
+    	<div class="loadanimate">
+        </div>
+        <div class="loadcircle">
+        </div>
+    </div>
+    <div id="navigation" class="ycenter">
+    	<nav id="navbar">
+        	<ul>
+            	<li class="ajax">
+            	    <%= link_to "about" do %>
+                    	<i class="ion-ios-settings"></i>
+                        <span class="navtxt">
+                            <h6>About Me</h6>
+                        </span>             
+                    <% end %>
+                </li>
+                <li class="ajax">
+                	<a href="myworks.html" js="global.js">
+                    	<i class="ion-images"></i>
+                        <span class="navtxt">
+                            <h6>My Works</h6>
+                        </span> 
+                    </a>
+                </li>
+                <li class="ajax">
+                	<a href="projectslist.html" js="global.js">
+                    	<i class="ion-ios-folder-outline"></i>
+                        <span class="navtxt">
+                            <h6>Project List</h6>
+                        </span> 
+                    </a>
+                </li>
+                <li>
+                	<a style="pointer-events: none;">
+                    	<i class="ion-cube"></i>
+                        <span class="navtxt">
+                            <h6>Shop (Disabled)</h6>
+                        </span> 
+                    </a>
+                </li>
+                <li>
+                	<a style="pointer-events: none;">
+                    	<i class="ion-ios-color-filter-outline"></i>
+                        <span class="navtxt">
+                            <h6>Association (Disabled)</h6>
+                        </span> 
+                    </a>
+                </li>
+                <li>
+                	<button type="button" data-toggle="modal" data-target="#Modal1">
+                    	<i class="ion-person-stalker"></i>
+                        <span class="navtxt">
+                            <h6>Contact Me</h6>
+                        </span> 
+                    </button>
+                </li>
+                <li class="ajax back">
+                	<a href="indexbody.html" js="global.js">
+                    	<i class="ion-more"></i>
+                        <span class="navtxt">
+                            <h6>Home</h6>
+                        </span> 
+                    </a>
+                </li>
+                <li class="navclose">
+                    <i class="ion-close-round"></i>
+                    <span class="navtxt">
+                        <h6>Close</h6>
+                    </span> 
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-  <body>
+    <body>
     <%= yield %>
-  </body>
+    </body>
+    
 </html>
