@@ -11,6 +11,10 @@ $(function() {
 			$(".loading").addClass("loaded");
 			updatesize();
 		});
+
+		$('#warning .close').click(function() {
+			$(this).parent().hide();
+		});
 	
 		$(".navtoggle").click(function(){
 			$(".navtoggle").addClass("navtogglemove");
